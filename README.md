@@ -1,4 +1,4 @@
-# mlops_made
+# Captcha recognition
 ### Create environment
 Create virtual environment (commands executed in project dir, unix-like systems)
 
