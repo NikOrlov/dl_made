@@ -1,6 +1,6 @@
 import torch.nn as nn
 import torch.nn.functional as F
-from config import LABELS
+from src.config import LABELS
 
 
 class Model(nn.Module):

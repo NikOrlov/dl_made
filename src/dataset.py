@@ -2,7 +2,7 @@ import os
 import torch
 from torch.utils.data import Dataset
 from PIL import Image
-from config import LABEL_TO_ID
+from src.config import LABEL_TO_ID
 
 
 class ImageDataset(Dataset):

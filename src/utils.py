@@ -1,6 +1,6 @@
 import numpy as np
 import torch
-from config import DEVICE, LOGGER
+from src.config import DEVICE, LOGGER
 
 
 def train_step(model, dataloader, opt, criterion, num_epochs) -> None:

@@ -1,7 +1,7 @@
 import torch
 import torch.nn as nn
 from torch.utils.data import random_split, DataLoader
-from config import (
+from src.config import (
     LOGGER,
     DATA_PATH,
     SEED,
@@ -17,9 +17,9 @@ from config import (
 )
 
 
-from utils import train_step, test_step
-from dataset import ImageDataset
-from model import Model
+from src.utils import train_step, test_step
+from src.dataset import ImageDataset
+from src.model import Model
 
 
 if __name__ == "__main__":

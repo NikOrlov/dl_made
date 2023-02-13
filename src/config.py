@@ -21,7 +21,7 @@ NUM_CHANNELS = 3
 
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 TRANSFORMS = torchvision.transforms.ToTensor()
-NUM_EPOCHS = 50
+NUM_EPOCHS = 5
 BS = 32
 
 log_conf = {
