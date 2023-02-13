@@ -25,7 +25,13 @@ class Model(nn.Module):
 
         self.conv7 = nn.Conv2d(512, 512, 2)
 
-        self.rnn = nn.LSTM(input_size=512, hidden_size=256, num_layers=2, batch_first=True, bidirectional=True)
+        self.rnn = nn.LSTM(
+            input_size=512,
+            hidden_size=256,
+            num_layers=2,
+            batch_first=True,
+            bidirectional=True,
+        )
         self.fc = nn.Linear(512, len(LABELS))
 
     def forward(self, x):

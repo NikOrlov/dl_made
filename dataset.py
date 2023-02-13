@@ -6,7 +6,9 @@ from config import LABEL_TO_ID
 
 
 class ImageDataset(Dataset):
-    def __init__(self, path, transforms=None, channels=None, left_side=None, right_side=None):
+    def __init__(
+            self, path, transforms=None, channels=None, left_side=None, right_side=None
+    ):
         self.path = path
         self.filenames = os.listdir(path)
         self.transforms = transforms
@@ -24,7 +26,7 @@ class ImageDataset(Dataset):
         if self.transforms:
             image = self.transforms(image)
 
-            if self.channels == 'mean':
+            if self.channels == "mean":
                 image = image.mean(axis=0, keepdims=True)
             elif self.channels == 3:
                 image = image[0:3, :]

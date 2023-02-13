@@ -4,8 +4,9 @@ import torch
 import torchvision
 
 
-DATA_PATH = 'dataset'
-LOG_PATH = 'training.log'
+DATA_PATH = "samples/samples"
+LOG_PATH = "training.log"
+MODEL_PATH = "model.pth"
 
 SEED = 42
 LABELS = string.digits + string.ascii_lowercase
@@ -18,45 +19,38 @@ DELTA = 2
 NUM_CHANNELS = 3
 
 
-DEVICE = 'cuda' if torch.cuda.is_available() else 'cpu'
+DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 TRANSFORMS = torchvision.transforms.ToTensor()
 NUM_EPOCHS = 50
 BS = 32
 
 log_conf = {
-    'version': 1,
-    'formatters': {
-        'simple': {
-            'format': '%(levelname)s\t%(message)s'
-        },
-        'extended': {
-            'format': '%(asctime)s\t%(levelname)s\t%(name)s\t%(message)s'
-        }
+    "version": 1,
+    "formatters": {
+        "simple": {"format": "%(levelname)s\t%(message)s"},
+        "extended": {"format": "%(asctime)s\t%(levelname)s\t%(name)s\t%(message)s"},
     },
-    'handlers': {
-        'file_handler': {
-            'level': 'DEBUG',
-            'filename': LOG_PATH,
-            'formatter': 'extended',
-            'class': 'logging.FileHandler'
+    "handlers": {
+        "file_handler": {
+            "level": "DEBUG",
+            "filename": LOG_PATH,
+            "formatter": "extended",
+            "class": "logging.FileHandler",
         },
-        'stream_handler': {
-            'level': 'INFO',
-            'formatter': 'simple',
-            'class': 'logging.StreamHandler'
-        }
+        "stream_handler": {
+            "level": "INFO",
+            "formatter": "simple",
+            "class": "logging.StreamHandler",
+        },
     },
-    'loggers': {
-        'file_stream': {
-            'level': 'DEBUG',
-            'handlers': ['file_handler', 'stream_handler']
+    "loggers": {
+        "file_stream": {
+            "level": "DEBUG",
+            "handlers": ["file_handler", "stream_handler"],
         },
-        'file': {
-            'level': 'DEBUG',
-            'handlers': ['file_handler']
-        }
-    }
+        "file": {"level": "DEBUG", "handlers": ["file_handler"]},
+    },
 }
 
 logging.config.dictConfig(log_conf)
-LOGGER = logging.getLogger('file_stream')
+LOGGER = logging.getLogger("file_stream")
